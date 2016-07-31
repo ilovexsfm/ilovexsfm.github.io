@@ -1,0 +1,73 @@
+
+body{
+	padding-top:10px;
+	padding-bottom:50px;
+}
+
+div{
+	font-size:20px;
+}
+
+
+
+#player{
+	color:white;
+	text-align:center;
+	opacity:0.8;
+
+	white-space:nowrap;
+	word-break:break-all;
+
+	overflow:hidden;
+	text-overflow:ellipsis;
+
+
+	position:fixed;
+	bottom:0;
+	width:100%;
+	background-color:black;
+}
+#player div a{
+}
+
+#audio {
+	align:left;
+	width:100%;
+}
+
+
+
+.title div{
+	text-align:center;
+}
+
+.date{
+	white-space:nowrap;
+	word-break:break-all;
+
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+
+.row div{
+	padding:5px;
+}
+.row div div{
+
+	margin:0px;
+	padding:0px;
+	width:100%;
+}
+.summary{
+	cursor:pointer;
+}
+
+
+a{
+	color:white;
+}
+
+
+
+
+

@@ -1,0 +1,156 @@
+<META charset="utf-8" />
+<html>
+
+<head> 
+<title></title> 
+
+<script src="./jquery-3.1.0.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./data.json"></script>
+
+
+
+
+
+<style>
+div{
+	font-size:20px;
+}
+
+
+#header{
+	height:30%;
+	position:relative;
+}
+#header div{
+	position:absolute;
+	bottom:10px;
+
+	width: 100%;
+
+	font-size:80px;
+	text-align:center;
+}
+
+
+@media  screen and (max-width: 1200px ) {
+	#header div {
+		font-size : 60px;
+	}
+}
+
+@media  screen and (max-width: 940px ) {
+	#header div {
+		font-size : 50px;
+	}
+}
+
+
+@media  screen and (max-width: 480px) {
+	#header div {
+		font-size : 30px;
+	}
+}
+
+#random_audio {
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+
+.row{
+	margin-top:10px;
+}
+
+
+#head_bar div{
+	margin-left:10px;
+}
+
+a{
+	color:black;
+	text-decoration:none;
+}
+
+a:link{
+	color:black;
+	text-decoration:none;
+}
+
+a:visited{
+	color:black;
+	text-decoration:none;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+<div class="container" >
+	<div class="row" id="head_bar">
+		<div class="col-md-2 col-xs-2"> <a href="list.html">LIST</a></div>
+		<div class="col-md-2 col-xs-2"> <a href="http://xsmall.co.kr">XSmall</a></div>
+	</div>
+	<hr>
+ 
+	<div class = "row" id="header">
+		<div class = "col-md-12"><p>IDWK</p></div>
+	</div>
+
+	
+
+	<div class = "row">
+		<div class = "col-md-12" >
+			<audio controls id = "random_audio" preload="auto">
+				<source id="random_audio_src" src="">
+			</audio>
+		</div>
+	</div>
+
+	<div class = "row">
+		<div class = "col-md=12" id="title"></div>
+	</div>
+
+	<div class = "row">
+		<div class="col-md-12" id="summary"></div>
+	</div>
+
+</div>
+
+<script>
+
+var episode = parseInt(Math.random()*1000%(data.length));
+var audio_src = document.getElementById("random_audio_src"); 
+
+document.getElementById("title").innerHTML = "<p>"+ data[episode]["title"] +"</p>";
+document.getElementById("summary").innerHTML = "<p>"+ data[episode]["summary"] +"</p>";
+
+audio_src.src = data[episode]["url"];
+
+var aud = document.getElementById("random_audio");
+aud.play();
+aud.onended = function() {
+	location.reload();
+};
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
